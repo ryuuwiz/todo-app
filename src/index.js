@@ -1,3 +1,4 @@
+// Data
 let todos = [
   {
     id: generateId(),
@@ -16,16 +17,23 @@ let todos = [
   },
 ];
 
+// Selectors
+const todosBox = document.querySelector(".todos-box");
+
+// Functions
 function generateId() {
   return Math.random().toString(36).replace("0.", "");
 }
 
-const todosBox = document.querySelector(".todos-box");
-
-document.addEventListener("DOMContentLoaded", function () {
+function renderTodos() {
   todos.map((todo) => {
     const todolist = document.createElement("li");
     todolist.textContent = todo.title;
     todosBox.appendChild(todolist);
   });
+}
+
+// Events
+document.addEventListener("DOMContentLoaded", function () {
+  renderTodos();
 });
