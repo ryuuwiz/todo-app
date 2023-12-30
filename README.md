@@ -4,7 +4,7 @@ Simple to-do list app that allows users to search, add, edit, and delete items. 
 
 ## Todos
 
-- [] View todos
+- [x] View todos
 - [] Add item
 - [] Store data into local storage
 - [] Delete items
