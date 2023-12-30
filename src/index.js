@@ -16,6 +16,11 @@ function generateId() {
   return Math.random().toString(36).replace("0.", "");
 }
 
+function initialTodos() {
+  const newTodos = JSON.parse(localStorage.getItem("todo-app"));
+  todos = [...newTodos];
+}
+
 function renderTodos() {
   todosBox.innerHTML = "";
   todos.map((todo) => {
@@ -27,6 +32,7 @@ function renderTodos() {
 
 // Events
 document.addEventListener("DOMContentLoaded", function () {
+  initialTodos();
   renderTodos();
 });
 
@@ -42,5 +48,6 @@ addTodoButton.addEventListener("click", function () {
 
   todos.push(newTodo);
   todoInput.value = "";
+  localStorage.setItem("todo-app", JSON.stringify([...todos]));
   renderTodos();
 });
