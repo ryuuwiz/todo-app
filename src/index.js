@@ -27,13 +27,19 @@ function renderTodos() {
   todosBox.innerHTML = "";
   todos.map((todo) => {
     const todolist = document.createElement("li");
-    const deleteButton = document.createElement("button");
-    deleteButton.classList.add("remove-button");
-    deleteButton.setAttribute("type", "button");
-    deleteButton.textContent = "X";
-    todolist.textContent = todo.title + " ";
     todolist.setAttribute("id", todo.id);
-    todolist.appendChild(deleteButton);
+
+    const todoListMarkup = `
+      <input type="checkbox" name="${todo.id}" id="${todo.id}" ${
+      todo.isComplete ? "checked" : ""
+    }>
+    <label for="${todo.id}" ${
+      todo.isComplete ? "style='text-decoration: line-through;'" : ""
+    } >${todo.title}</label>
+    <button class="remove-button" type="button">X</button>
+    `;
+
+    todolist.innerHTML = todoListMarkup;
     todosBox.appendChild(todolist);
   });
 }
@@ -44,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
   renderTodos();
 });
 
+// Add Todo
 addTodoButton.addEventListener("click", function () {
   const inputValue = todoInput.value;
   if (inputValue.value === "") return;
@@ -60,6 +67,7 @@ addTodoButton.addEventListener("click", function () {
   renderTodos();
 });
 
+// Remove Todo
 todosBox.addEventListener("click", function (e) {
   if (e.target.classList.contains("remove-button")) {
     const todoId = e.target.closest("li").id;
@@ -68,4 +76,14 @@ todosBox.addEventListener("click", function (e) {
     localStorage.setItem("todo-app", JSON.stringify([...todos]));
     renderTodos();
   }
+});
+
+// Edit Todo
+todosBox.addEventListener("input", function (e) {
+  const todoId = e.target.closest("li").id;
+  const newTodos = [...todos].find((todo) => todo.id === String(todoId));
+
+  newTodos.isComplete = !newTodos.isComplete;
+  localStorage.setItem("todo-app", JSON.stringify([...todos]));
+  renderTodos();
 });
