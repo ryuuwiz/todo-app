@@ -2,11 +2,11 @@
 
 Simple to-do list app that allows users to search, add, edit, and delete items. Using local storage to store the data.
 
-## Todos
+## Features
 
 - [x] View todos
 - [x] Add item
 - [x] Store data into local storage
 - [x] Delete items
 - [x] Edit item
-- [] Search item
+- [x] Search item

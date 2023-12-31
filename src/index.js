@@ -11,10 +11,21 @@ const todoInput = document.querySelector(".todo-input");
 const addTodoButton = document.querySelector(".add-todo");
 const removeButton = document.querySelector(".remove-button");
 const todosBox = document.querySelector(".todos-box");
+const searchForm = document.querySelector(".search-form");
+const searchInput = document.querySelector(".todo-search");
+const searchButton = document.querySelector(".search-button");
 
 // Functions
 function generateId() {
   return Math.random().toString(36).replace("0.", "");
+}
+
+function renderSearch() {
+  if (todos.length > 0) {
+    searchForm.removeAttribute("hidden");
+  } else {
+    searchForm.setAttribute("hidden", "");
+  }
 }
 
 function initialTodos() {
@@ -24,6 +35,7 @@ function initialTodos() {
 }
 
 function renderTodos() {
+  renderSearch();
   todosBox.innerHTML = "";
   todos.map((todo) => {
     const todolist = document.createElement("li");
@@ -85,5 +97,20 @@ todosBox.addEventListener("input", function (e) {
 
   newTodos.isComplete = !newTodos.isComplete;
   localStorage.setItem("todo-app", JSON.stringify([...todos]));
+  renderTodos();
+});
+
+// Search Todo
+searchButton.addEventListener("click", function () {
+  const searchValue = searchInput.value;
+  if (searchValue === "") return;
+
+  const searchTodo = [...todos].find(
+    (todo) => todo.title === String(searchValue)
+  );
+  searchInput.value = "";
+  todos = [];
+  todos.push(searchTodo);
+
   renderTodos();
 });
