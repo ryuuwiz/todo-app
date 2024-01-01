@@ -10,6 +10,7 @@
 
 /* Mobile */
 .container {
+  background-color: #f8edff;
   max-width: 768px;
   min-height: 100vh;
   margin: 0 auto;
@@ -22,4 +23,30 @@
   margin-bottom: 2rem;
   font-weight: 500;
   font-size: 2.5rem;
+  color: #3d3b40;
+}
+
+.todo-form {
+  margin: 2rem 0;
+}
+
+.todo-form .input-form {
+  margin-bottom: 2rem;
+}
+
+.input-form .todo-input,
+.input-form .add-todo {
+  padding: 0.5rem 1rem;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+}
+
+.add-todo {
+  background-color: #525ceb;
+  color: #bfcfe7;
+}
+.add-todo:hover {
+  background-color: #2a3079;
+  color: #c5d6f0;
+  cursor: pointer;
 }
