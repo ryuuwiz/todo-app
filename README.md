@@ -1,6 +1,6 @@
 # Todo App
 
-Simple to-do list app that allows users to search, add, edit, and delete items. Using local storage to store the data.
+Simple to-do list app using vanilla js that allows users to search, add, edit, and delete items. Using local storage to store the data.
 
 ## Features
 
