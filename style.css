@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+/* Mobile */
+.container {
+  background-color: #f8edff;
+  max-width: 768px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  text-align: center;
+  /* border: 1px solid black; */
+}
+
+.title {
+  margin-bottom: 2rem;
+  font-weight: 500;
+  font-size: 2.5rem;
+  color: #3d3b40;
+}
+
+.todo-form {
+  margin: 2rem 0;
+}
+
+.input-form,
+.search-form {
+  margin: 2rem;
+}
+
+.todo-input,
+.add-todo,
+.todo-search,
+.search-button {
+  padding: 0.5rem 1rem;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+}
+
+.add-todo,
+.search-button {
+  background-color: #525ceb;
+  color: #bfcfe7;
+}
+.add-todo:hover,
+.search-button:hover {
+  background-color: #2a3079;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.todos-box {
+  text-align: start;
+  padding: 2rem;
+  margin-bottom: 4rem;
+  background-color: #bfcfe7;
+  box-shadow: 5px 10px #3d3b40;
+  border-radius: 0.5rem;
+}
+
+.todos-box li {
+  list-style: none;
+  margin: 1.5rem 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+li input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+li input:hover {
+  cursor: pointer;
+}
+
+li .remove-button {
+  color: #f8edff;
+  background-color: rgb(212, 60, 60);
+  padding: 0.5rem;
+  border: 0 solid black;
+  border-radius: 0.25rem;
+}
+
+li .remove-button:hover {
+  background-color: rgb(177, 29, 29);
+  cursor: pointer;
+}
+
+footer {
+  padding: 2rem;
+}
+
+footer p {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
