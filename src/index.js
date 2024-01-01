@@ -65,7 +65,8 @@ document.addEventListener("DOMContentLoaded", function () {
 // Add Todo
 addTodoButton.addEventListener("click", function () {
   const inputValue = todoInput.value;
-  if (inputValue.value === "") return;
+  if (inputValue.value === "" || inputValue.value === undefined)
+    return alert("Please fill the add todo input");
 
   const newTodo = {
     id: generateId(),
