@@ -6,6 +6,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
+  font-weight: 400;
 }
 
 /* Mobile */
@@ -47,6 +48,6 @@
 }
 .add-todo:hover {
   background-color: #2a3079;
-  color: #c5d6f0;
+  font-weight: 500;
   cursor: pointer;
 }
