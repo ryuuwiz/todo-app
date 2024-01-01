@@ -9,6 +9,10 @@
   font-weight: 400;
 }
 
+body {
+  background-color: #f8edff;
+}
+
 /* Mobile */
 .container {
   background-color: #f8edff;
