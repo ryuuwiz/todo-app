@@ -31,22 +31,27 @@
   margin: 2rem 0;
 }
 
-.todo-form .input-form {
+.input-form,
+.search-form {
   margin-bottom: 2rem;
 }
 
-.input-form .todo-input,
-.input-form .add-todo {
+.todo-input,
+.add-todo,
+.todo-search,
+.search-button {
   padding: 0.5rem 1rem;
   border: 2px solid black;
   border-radius: 0.5rem;
 }
 
-.add-todo {
+.add-todo,
+.search-button {
   background-color: #525ceb;
   color: #bfcfe7;
 }
-.add-todo:hover {
+.add-todo:hover,
+.search-button:hover {
   background-color: #2a3079;
   font-weight: 500;
   cursor: pointer;
