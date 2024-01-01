@@ -48,7 +48,7 @@ function renderTodos() {
     <label for="${todo.id}" ${
       todo.isComplete ? "style='text-decoration: line-through;'" : ""
     } >${todo.title}</label>
-    <button class="remove-button" type="button">X</button>
+    <button class="remove-button" type="button"><i class="fa-solid fa-trash"></i></button>
     `;
 
     todolist.innerHTML = todoListMarkup;
