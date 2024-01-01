@@ -104,7 +104,8 @@ todosBox.addEventListener("input", function (e) {
 // Search Todo
 searchButton.addEventListener("click", function () {
   const searchValue = searchInput.value;
-  if (searchValue === "") return;
+  if (searchInput.value === "" || searchInput.value === undefined)
+    return alert("Please fill the search todo input");
 
   const searchTodo = [...todos].find(
     (todo) => todo.title === String(searchValue)
