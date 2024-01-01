@@ -65,8 +65,13 @@ document.addEventListener("DOMContentLoaded", function () {
 // Add Todo
 addTodoButton.addEventListener("click", function () {
   const inputValue = todoInput.value;
-  if (inputValue.value === "" || inputValue.value === undefined)
+  if (
+    todoInput.value === "" ||
+    todoInput.value === undefined ||
+    todoInput.value === " "
+  )
     return alert("Please fill the add todo input");
+  console.log(todoInput.value);
 
   const newTodo = {
     id: generateId(),
@@ -104,7 +109,11 @@ todosBox.addEventListener("input", function (e) {
 // Search Todo
 searchButton.addEventListener("click", function () {
   const searchValue = searchInput.value;
-  if (searchInput.value === "" || searchInput.value === undefined)
+  if (
+    searchInput.value === "" ||
+    searchInput.value === undefined ||
+    searchInput.value === " "
+  )
     return alert("Please fill the search todo input");
 
   const searchTodo = [...todos].find(
