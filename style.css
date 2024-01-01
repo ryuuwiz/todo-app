@@ -97,3 +97,12 @@ li .remove-button:hover {
   background-color: rgb(177, 29, 29);
   cursor: pointer;
 }
+
+footer {
+  padding: 2rem;
+}
+
+footer p {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
