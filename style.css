@@ -92,7 +92,7 @@ li input:hover {
 li .remove-button {
   color: #f8edff;
   background-color: rgb(212, 60, 60);
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   border: 0 solid black;
   border-radius: 0.25rem;
 }
