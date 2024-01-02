@@ -37,7 +37,7 @@ body {
 
 .input-form,
 .search-form {
-  margin: 2rem;
+  margin: 1rem 0;
 }
 
 .todo-input,
@@ -51,6 +51,7 @@ body {
 
 .add-todo,
 .search-button {
+  margin-top: 1rem;
   background-color: #525ceb;
   color: #bfcfe7;
 }
@@ -62,9 +63,10 @@ body {
 }
 
 .todos-box {
+  max-width: fit-content;
   text-align: start;
   padding: 2rem;
-  margin-bottom: 4rem;
+  margin: 2rem auto;
   background-color: #bfcfe7;
   box-shadow: 5px 10px #3d3b40;
   border-radius: 0.5rem;
@@ -92,7 +94,7 @@ li input:hover {
 li .remove-button {
   color: #f8edff;
   background-color: rgb(212, 60, 60);
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   border: 0 solid black;
   border-radius: 0.25rem;
 }
@@ -103,7 +105,7 @@ li .remove-button:hover {
 }
 
 footer {
-  padding: 2rem;
+  padding: 1rem;
 }
 
 footer p {

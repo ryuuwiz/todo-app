@@ -48,7 +48,9 @@ function renderTodos() {
     <label for="${todo.id}" ${
       todo.isComplete ? "style='text-decoration: line-through;'" : ""
     } >${todo.title}</label>
-    <button class="remove-button" type="button"><i class="fa-solid fa-trash"></i></button>
+    <button class="remove-button" type="button">
+      <i class="fa-solid fa-trash"></i>
+    </button>
     `;
 
     todolist.innerHTML = todoListMarkup;
@@ -87,12 +89,15 @@ addTodoButton.addEventListener("click", function () {
 
 // Remove Todo
 todosBox.addEventListener("click", function (e) {
-  if (e.target.classList.contains("remove-button")) {
+  if (
+    e.target.classList.contains("remove-button") ||
+    e.target.parentElement.classList.contains("remove-button")
+  ) {
     const todoId = e.target.closest("li").id;
     const newTodos = [...todos].filter((todo) => todo.id !== String(todoId));
     todos = newTodos;
     localStorage.setItem("todo-app", JSON.stringify([...todos]));
-    renderTodos();
+    document.getElementById(todoId).remove();
   }
 });
 
